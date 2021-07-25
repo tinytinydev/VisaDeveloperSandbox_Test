@@ -1,6 +1,8 @@
 # Visa Developer Platform Sandbox Sample Project
 This project is created using Nodejs and Express library and it allows you to send request to Visa Developer Platform's Sandbox API(s). Users are expected to create an Visa Developer Account and project to configure the credentials in this project. 
 
+You can import the Postman Collection into your Postman to test some of the sandbox Urls. Configure your postman by following this instructions: https://developer.visa.com/pages/working-with-visa-apis/two-way-ssl#testing_twoway_ssl_connectivity_using_postman 
+
 # Creating Visa Developer Account
 1. Create a Visa Developer Account here:
 https://developer.visa.com/identity/user/register
