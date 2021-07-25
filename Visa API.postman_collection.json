@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "b34f7e6d-7298-433a-bee9-e70f76ffcc22",
+		"name": "Visa API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Helloworld",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sandbox.api.visa.com/vdp/helloworld",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"api",
+						"visa",
+						"com"
+					],
+					"path": [
+						"vdp",
+						"helloworld"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ATM Locator",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " \n{\n\"wsRequestHeaderV2\": {\n\"requestTs\": \"2021-07-23T09:11:18.000Z\",\n\"requestMessageId\": \"ICE01-001\",\n\"userBid\": \"10000108\",\n\"correlationId\": \"909420141104053819418\",\n\"applicationId\": \"GEOCODE\",\n\"userId\": \"CDISIUserID\"\n},\n\"requestData\": {\n\"distanceUnit\": \"mi\",\n\"distance\": \"20\",\n\"options\": {\n\"fetchATMOwnerData\": \"Y\",\n\"findFilters\": [\n{\n\"filterValue\": 1,\n\"filterName\": \"CHIP_ENABLED\"\n},\n{\n\"filterValue\": \"B\",\n\"filterName\": \"ACCESS_HOURS\"\n}\n],\n\"range\": {\n\"count\": 99,\n\"start\": 0\n},\n\"sort\": {\n\"primary\": \"distance\",\n\"direction\": \"asc\"\n},\n\"useFirstAmbiguous\": true\n},\n\"location\": {\n\"placeName\": \"Singapore\"\n},\n\"metaDataOptions\": 0\n}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sandbox.api.visa.com/globalatmlocator/v1/localatms/geocodesinquiry",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"api",
+						"visa",
+						"com"
+					],
+					"path": [
+						"globalatmlocator",
+						"v1",
+						"localatms",
+						"geocodesinquiry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Supplier Matching",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"matchConfidence\": \"High\",\n\"matchStatus\": \"Yes\",\n\"matchDetails\": {\n\"l3li\": \"\",\n\"l2\": \"\",\n\"fleetInd\": \"\",\n\"mcc\": \"3501\",\n\"l3s\": \"\"\n},\n\"status\": {\n\"statusDescription\": \"Request successfully received\",\n\"statusCode\": \"SMSAPI000\"\n}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sandbox.api.visa.com/visasuppliermatchingservice/v1/search?supplierName=supplier1&supplierCountryCode=840",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"api",
+						"visa",
+						"com"
+					],
+					"path": [
+						"visasuppliermatchingservice",
+						"v1",
+						"search"
+					],
+					"query": [
+						{
+							"key": "supplierName",
+							"value": "supplier1"
+						},
+						{
+							"key": "supplierCountryCode",
+							"value": "840"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bank",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sandbox.api.visa.com/visab2bconnect/v1/banks/12345678",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"api",
+						"visa",
+						"com"
+					],
+					"path": [
+						"visab2bconnect",
+						"v1",
+						"banks",
+						"12345678"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Companies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sandbox.api.visa.com/visab2bconnect/v1/companies/banks?bankId=12345678",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"api",
+						"visa",
+						"com"
+					],
+					"path": [
+						"visab2bconnect",
+						"v1",
+						"companies",
+						"banks"
+					],
+					"query": [
+						{
+							"key": "bankId",
+							"value": "12345678"
+						},
+						{
+							"key": "searchNameKeyword",
+							"value": "wal",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction Controls Allowed by Primary Account Number",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"primaryAccountNumber\": \"4514170000000001\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sandbox.api.visa.com/vctc/customerrules/v1/transactiontypecontrols/cardinquiry",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"api",
+						"visa",
+						"com"
+					],
+					"path": [
+						"vctc",
+						"customerrules",
+						"v1",
+						"transactiontypecontrols",
+						"cardinquiry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Card for Transaction Control",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " \n{\n    \"primaryAccountNumber\": \"4640509382310000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sandbox.api.visa.com/vctc/customerrules/v1/consumertransactioncontrols",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"api",
+						"visa",
+						"com"
+					],
+					"path": [
+						"vctc",
+						"customerrules",
+						"v1",
+						"consumertransactioncontrols"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{password}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{username}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
