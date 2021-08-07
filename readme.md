@@ -26,9 +26,11 @@ The next step after creating a new project is to download the private key. You M
 
 6. Download Certificates
 Navigate to Credentials in the side menu and download the Client Certificate and Visa Developer Platform CA Certificate
-![Download Certs](assets/downloadCerts.png)
-The CA Certificate has to be converted to .pem extensions before it can be used. For Windows: https://help.teradici.com/s/article/1147 For Mac/Linux: https://perrohunter.com/how-to-convert-a-cer-certificate-to-pem-on-linuxunix-and-os-x/  
-Move these Certificates into the project directory and update their file path in config.js 
+![Download Certs](assets/downloadCerts.png) </br></br>
+The CA Certificate has to be converted to .pem extensions before it can be used. </br>
+For Windows: https://help.teradici.com/s/article/1147 </br>
+For Mac/Linux: https://perrohunter.com/how-to-convert-a-cer-certificate-to-pem-on-linuxunix-and-os-x/ </br> 
+Move these Certificates into the project directory and update their file path in config.js </br></br>
 ![Cert Path](assets/certPath.png)
 
 7. Copy User Details
