@@ -8,7 +8,7 @@ You can import the Postman Collection into your Postman to test some of the sand
 https://developer.visa.com/identity/user/register
 
 ![Visa Developer Platform Signin Page](assets/registerAcc.png)
-
+    
 2. Create a New Project
 ![Create New Project Screen](assets/newProj.png)
 
@@ -27,6 +27,7 @@ The next step after creating a new project is to download the private key. You M
 6. Download Certificates
 Navigate to Credentials in the side menu and download the Client Certificate and Visa Developer Platform CA Certificate
 ![Download Certs](assets/downloadCerts.png)
+The CA Certificate has to be converted to .pem extensions before it can be used. For Windows: https://help.teradici.com/s/article/1147 For Mac/Linux: https://perrohunter.com/how-to-convert-a-cer-certificate-to-pem-on-linuxunix-and-os-x/  
 Move these Certificates into the project directory and update their file path in config.js 
 ![Cert Path](assets/certPath.png)
 
@@ -35,4 +36,4 @@ Copy User ID and password from Credential page and update config.js
 ![Copy Credentials](assets/copyUserAuthDetails.png)
 
 8. Run the Node Js project and test the API!
-http://localhost:3000/banks/12345678 
+http://localhost:3000/banks/12345678 (Don't forget to run npm install to install the libs as well)
